@@ -51,6 +51,11 @@
                 }
             });
         }
+            function sign_out() {
+                $.removeCookie('mytoken', {path: '/'});
+                alert('로그아웃!')
+                window.location.href = "/login"
+            }
 
     </script>
 
@@ -58,6 +63,13 @@
 </head>
 
 <body>
+<nav id="btns-me" class="level is-mobile" style="margin-top:2rem">
+    <a class="button level-item has-text-centered is-sparta is-outlined" aria-label="logout"
+       onclick="sign_out()">
+        로그아웃&nbsp;&nbsp;&nbsp;<span class="icon is-small"><i class="fa fa-sign-out"
+                                                             aria-hidden="true"></i></span>
+    </a>
+</nav>
 <h1 class="main_title"> 조난99 </h1>
 <div class="big_login_box">
     <div class="input-group mb-3" id="login-box">
