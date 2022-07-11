@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="술자리"/>
+    <meta property="og:description" content="술에 어울리는 안주 찾기"/>
+    <meta property="og:image"
+          content="https://scontent-ssn1-1.xx.fbcdn.net/v/t31.18172-8/30806144_770244253167095_8717558604497511143_o.jpg?_nc_cat=106&ccb=1-7&_nc_sid=e3f864&_nc_ohc=gZR33rSiTL0AX_hVM33&_nc_ht=scontent-ssn1-1.xx&oh=00_AT_VNBNKolTbFZAKZs8Fqiju9q_MIiApTJy8QZp1cHTXcg&oe=62D936AA"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>술자리</title>
+
+   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Jua', sans-serif;
+        }
+
+        .header {
+            background-color: aliceblue;
+        }
+
+        .header > h4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            width: 100%;
+            height: 100px;
+            margin-top: 50px;
+            flex-direction: column;
+
+            /*background-color: green;*/
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title > h4 {
+            margin-top: 10px;
+        }
+
+        .info {
+            margin: 10px auto 50px auto;
+
+            display: flex;
+            flex-direction: row;
+        }
+
+        .banner {
+            width: 70%;
+            height: 150px;
+            float: left;
+
+            /*background-color: aliceblue;*/
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .member {
+            width: 30%;
+            height: 150px;
+            float: left;
+            flex-direction: column;
+
+            padding: 50px;
+
+            /*background-color: aquamarine;*/
+            border-width: 1px;
+            border-style: solid;
+            border-color: black;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .member_btn {
+            float: left;
+        }
+
+        .member_btn > button {
+            margin: auto 10px auto 10px;
+        }
+
+        .alcohol {
+            width: 60%;
+            margin: 0 auto;
+
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 300px;
+            height: 300px;
+            margin: 50px auto 50px auto;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card > img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .card > p {
+            margin-top: 20px;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            // set_temp()
+            // show_comment()
+        });
+    </script>
+</head>
+<body>
+<div class="header">
+    <div class="title">
+        <h1>술자리</h1>
+    </div>
+    <div class="info">
+        <div class="banner">
+            <h2>배너</h2>
+        </div>
+        <div class="member">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">ID</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm">PW</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="member_btn">
+                <button type="button" class="btn btn-outline-dark">로그인</button>
+                <button type="button" class="btn btn-outline-dark">회원가입</button>
+            </div>
+        </div>
+    </div>
+    <h4>술과 잘 어울리는 안주를 확인해보세요!</h4>
+</div>
+
+<div class="alcohol">
+    <div class="card">
+        <img src="https://photo.jtbc.joins.com/news/jam_photo/202202/18/77cd3993-8369-46a2-9554-71eff089bd3f.jpg"
+             class="soju">
+        <p>소주</p>
+    </div>
+    <div class="card">
+        <img src="http://kpenews.com/Files/4/News/202001/270_20200108114537910.JPG"
+             class="beer">
+        <p>맥주</p>
+    </div>
+    <div class="card">
+        <img src="https://www.naracellar.com/data/editor/1803/20180329175700_017d01bb99407fcf9d1499391e2bd9c0_mlgr.png"
+             class="wine">
+        <p>와인</p>
+    </div>
+    <div class="card">
+        <img src="https://image.ajunews.com/content/image/2022/02/03/20220203093355761859.jpg"
+             class="makkoli">
+        <p>막걸리</p>
+    </div>
+</div>
+</body>
+</html>
