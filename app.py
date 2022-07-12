@@ -15,9 +15,10 @@ SECRET_KEY = 'SPARTA'
 import certifi
 
 ca = certifi.where()
+client = MongoClient('mongodb+srv://rang:sparta@cluster0.ehs69cs.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile = ca)
 
-client = MongoClient('mongodb+srv://test:sparta@cluster0.xoqdp7u.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
-db = client.dbsparta_plus_week4
+# client = MongoClient('mongodb+srv://test:sparta@cluster0.xoqdp7u.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
+db = client.team8
 
 
 @app.route('/')
