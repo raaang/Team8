@@ -78,11 +78,12 @@ def sign_in():
 def sign_up():
     username_receive = request.form['username_give']
     password_receive = request.form['password_give']
+    userbrith_receive = request.form['userbrith_give']
     password_hash = hashlib.sha256(password_receive.encode('utf-8')).hexdigest()
     doc = {
         "username": username_receive,                               # 아이디
         "password": password_hash,                                  # 비밀번호
-        "profile_name": username_receive,                           # 프로필 이름 기본값은 아이디
+        "userbrith": userbrith_receive,                           # 프로필 이름 기본값은 아이디
         "profile_pic": "",                                          # 프로필 사진 파일 이름
         "profile_pic_real": "profile_pics/profile_placeholder.png", # 프로필 사진 기본 이미지
         "profile_info": ""                                          # 프로필 한 마디
@@ -94,6 +95,7 @@ def sign_up():
 @app.route('/sign_up/check_dup', methods=['POST'])
 def check_dup():
     username_receive = request.form['username_give']
+
 
     exists = bool(db.users.find_one({"username": username_receive}))
     return jsonify({'result': 'success', 'exists': exists})
