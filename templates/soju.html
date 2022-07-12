@@ -1,0 +1,140 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>술자리</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
+            rel="stylesheet"
+    />
+    <script>
+        function click() {
+            $.ajax({
+                type: "GET",
+                url: "/test?title_give=봄날은간다",
+                data: {},
+                success: function (response) {
+                    console.log(response)
+                }
+            })
+        }
+    </script>
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    />
+
+    <style>
+        .container {
+            text-align: center;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            padding: 2em;
+            margin: 1em;
+            flex: 1 1 0;
+            border-radius: 7px;
+            box-shadow: 2px 2px 4px 2px rgb(113, 77, 77);
+        }
+
+        .img {
+            height: 50vh;
+            width: 70%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mybtn {
+            width: calc(20% - 20px);
+        }
+
+        .mybtn > button {
+            width: 100px;
+            height: 40px;
+            border-radius: 50px;
+            background-color: transparent;
+
+            border: 2px solid blue;
+        }
+
+        .mybtn > button:hover {
+            border: 4px solid blue;
+            background-color: skyblue;
+        }
+    </style>
+
+    <script src="//code.jquery.com/jquery-3.3.1.min.js">
+        </scrip>
+        <script>
+        <!-- 버튼 페이드 인 -->
+        <!-- $(document).ready(function () {
+          $('button.a').click(function () {
+            $('div.box').fadeOut(2000, 'swing');
+            $('div.box').fadeOut(2000, 'linear');
+          });
+        }); -->
+    </script>
+</head>
+<body>
+<div class="container">
+    <!-- 박스 -->
+    <div class="wrap">
+        <div class="box">
+            <img
+                    class="img"
+                    src="https://i0.wp.com/www.sulsulsul.com/wp-content/uploads/2020/06/%EC%B0%B8%EC%9D%B4%EC%8A%AC-fresh.jpg?fit=1400%2C1400&ssl=1"
+                    alt=""
+            />
+            <div class="mybtn">
+                <button class="a" onclick="location.href='cham.html'">
+                    별점누르기
+                </button>
+            </div>
+        </div>
+
+        <div class="box">
+            <img
+                    class="img"
+                    src="https://cdn.shopify.com/s/files/1/0549/2064/2794/products/Chumchurum17_Soju1_large.jpg?v=1635737818"
+                    alt=""
+            />
+            <div class="mybtn">
+                <button class="a">별점누르기</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="box">
+            <img
+                    class="img"
+                    src="https://i0.wp.com/www.sulsulsul.com/wp-content/uploads/2020/06/%ED%95%9C%EB%9D%BC%EC%82%B021.jpg?fit=850%2C850&ssl=1"
+                    alt=""
+            />
+            <div class="mybtn">
+                <button class="a">별점누르기</button>
+            </div>
+        </div>
+        <div class="box">
+            <img
+                    class="img"
+                    src="https://i0.wp.com/www.sulsulsul.com/wp-content/uploads/2020/06/%EC%A7%84%EB%A1%9C-%EC%9D%B4%EC%A6%88-%EB%B0%B1.jpg?fit=1900%2C1900&ssl=1"
+                    alt=""
+            />
+            <div class="mybtn">
+                <button class="a">별점누르기</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
