@@ -12,12 +12,9 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config['UPLOAD_FOLDER'] = "./static/profile_pics"
 
 SECRET_KEY = 'SPARTA'
-import certifi
 
-ca = certifi.where()
-
-client = MongoClient('mongodb+srv://test:sparta@cluster0.xoqdp7u.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
-db = client.dbsparta_plus_week4
+client = MongoClient('mongodb+srv://test:sparta@cluster0.irl8uln.mongodb.net/Cluster0?retryWrites=true&w=majority')
+db = client.team8
 
 
 @app.route('/')
@@ -67,12 +64,13 @@ def sign_in():
          'id': username_receive,
          'exp': datetime.utcnow() + timedelta(seconds=60 * 60 * 24)  # 로그인 24시간 유지
         }
-        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256') #.decode('utf-8')
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
-        return jsonify({'result': 'success', 'token': token})
+        return jsonify({'result': 'success', 'token': token, 'msg': '로그인 성공. 환영합니다!'})
     # 찾지 못하면
     else:
         return jsonify({'result': 'fail', 'msg': '아이디/비밀번호가 일치하지 않습니다.'})
+
 
 @app.route('/sign_up/save', methods=['POST'])
 def sign_up():
@@ -82,10 +80,6 @@ def sign_up():
     doc = {
         "username": username_receive,                               # 아이디
         "password": password_hash,                                  # 비밀번호
-        "profile_name": username_receive,                           # 프로필 이름 기본값은 아이디
-        "profile_pic": "",                                          # 프로필 사진 파일 이름
-        "profile_pic_real": "profile_pics/profile_placeholder.png", # 프로필 사진 기본 이미지
-        "profile_info": ""                                          # 프로필 한 마디
     }
     db.users.insert_one(doc)
     return jsonify({'result': 'success'})
@@ -96,17 +90,6 @@ def check_dup():
     username_receive = request.form['username_give']
     exists = bool(db.users.find_one({"username": username_receive}))
     return jsonify({'result': 'success', 'exists': exists})
-
-
-@app.route('/update_profile', methods=['POST'])
-def save_img():
-    token_receive = request.cookies.get('mytoken')
-    try:
-        payload = jwt.decode(token_receive, SECRET_KEY, algorithms=['HS256'])
-        # 프로필 업데이트
-        return jsonify({"result": "success", 'msg': '프로필을 업데이트했습니다.'})
-    except (jwt.ExpiredSignatureError, jwt.exceptions.DecodeError):
-        return redirect(url_for("home"))
 
 
 @app.route('/posting', methods=['POST'])
