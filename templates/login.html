@@ -193,18 +193,15 @@
         <style>
             *{
             font-family: 'Hi Melody', cursive;
-
             }
-
+            
             body {
-                background-color: #95B65B;
+                background-color: #379B93;
                 min-height: 100vh;
             }
 
 
-
             .section {
-
                 padding: 1rem 1.5rem;
                 max-width: 750px;
                 margin: auto;
@@ -214,37 +211,79 @@
                 font-weight: 800;
                 font-size: 5rem;
             }
+            .title_img{
+                height: 150px;
+            }
 
             .subtitle {
                 font-size: 2rem;
+                font-weight: bolder;
             }
 
             .is-sparta {
-                color: #87D194!important;
+                color:  #379B93!important;
             }
-
+            .is-sparta1 {
+                color: #379B93!important;
+            }
             .button.is-sparta {
-                background-color: #87D194;
+                background-color: #379B93;
                 border-color: transparent;
                 color: #fff!important;
             }
 
             .button.is-sparta.is-outlined {
                 background-color: transparent;
-                border-color: #87D194;
-                color: #87D194!important;
+                border-color: #379B93;
+                color:#379B93!important;
             }
 
             .help {
                 color: gray;
             }
+
+            footer{
+                width: 100%;
+                height: 295px; /* 내용물에 따라 알맞는 값 설정 */
+                bottom: 0px;
+                position: absolute;
+
+            }
+            .footer_img{
+                width: 2000px;
+                height: 286px;
+            }
+
+            .bottom-left {
+                position: absolute;
+                top: 45%;
+                left: 80%;
+                bottom: 5px;
+                transform: translate(-50%, -50%);
+                font-size: 2rem;
+                font-weight: bolder;
+                color : #265AB9;
+            }
+
+            .bottom-right {
+                position: absolute;
+                bottom: 5px;
+                transform: translate(-50%, -50%);
+                top: 45%;
+                left: 15%;
+                font-size: 3rem;
+                font-weight: bolder;
+                color : #265AB9;
+            }
+
         </style>
     </head>
     <body>
-    <section class="hero is-white">
+        <section class="hero is-white">
         <div class="hero-body has-text-centered" style="padding-bottom:1rem;margin:auto;">
+            <img class="title_img" src="data:image/png;base64,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" alt="">
             <h1 class="title is-sparta">술자리</h1>
-            <h3 class="subtitle is-sparta">오늘 한잔 달달하게</h3>
+            <h3 class="subtitle is-sparta1">오늘 한잔 달달하게</h3>
         </div>
     </section>
     <section class="section">
@@ -298,7 +337,7 @@
                         <div id="sign-up-box" class="is-hidden">
                             <div class="mb-5">
                                 <div class="field">
-                                    <div class="control has-icons-left" style="width:100%">
+                                        <div class="control has-icons-left" style="width:100%">
                                         <input id="input-password2" class="input" type="password"
                                                placeholder="비밀번호 재입력">
                                         <span class="icon is-small is-left"><i class="fa fa-lock"></i></span>
@@ -327,13 +366,20 @@
                                 </button>
                             </nav>
                         </div>
-
-
                     </div>
                 </article>
             </div>
-
         </div>
     </section>
+    <footer>
+            <img class="footer_img" src="https://media.istockphoto.com/vectors/watercolor-transparent-sea-ocean-wave-teal-turquoise-colored-hand-vector-id1204688718" alt="">
+            <div class="bottom-left">
+                <li>신윤섭</li>
+                <li>배성열</li>
+                <li>민영기</li>
+                <li>배아랑이</li>
+            </div>
+        <div class="bottom-right">Team 8조</div>
+    </footer>
     </body>
 </html>
